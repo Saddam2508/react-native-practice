@@ -9,7 +9,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = () => {
     if (email === "admin@gmail.com" && password === "1234") {
-      navigation.navigate("Dashboard");
+      navigation.navigate("dashboard");
     } else {
       alert("Invalid credentials");
     }
