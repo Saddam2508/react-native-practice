@@ -1,4 +1,3 @@
-import { useRouter } from "expo-router";
 import { useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -10,7 +9,6 @@ const Settings = () => <Text>⚙️ Settings Content</Text>;
 
 export default function Dashboard({ navigation }) {
   const [selected, setSelected] = useState("Home");
-  const router = useRouter();
 
   const menuItems = [
     { id: "1", title: "Home", icon: "home" },
@@ -28,17 +26,15 @@ export default function Dashboard({ navigation }) {
           flex: 1,
           margin: 10,
           padding: 20,
-          backgroundColor: isActive ? "#d1e7ff" : "#f2f2f2",
+          backgroundColor: isActive ? "#d1e7ff" : "#f2f2f2", // 👈 active color
           borderRadius: 10,
           alignItems: "center",
         }}
         onPress={() => {
           if (item.title === "Profile") {
-            navigation.navigate("Profile");
-          } else if (item.title === "Home") {
-            router.push("/(tabs)/home");
+            navigation.navigate("Profile"); // 👉 অন্য layout
           } else {
-            setSelected(item.title);
+            setSelected(item.title); // 👉 নিচে change হবে
           }
 
           // web focus fix
