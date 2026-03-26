@@ -7,7 +7,7 @@ export default function Details() {
   return (
     <Button
       title="Go Back"
-      onPress={() => router.replace("/Dashboard" as any)}
+      onPress={() => router.replace("/dashboard" as any)}
     />
   );
 }
